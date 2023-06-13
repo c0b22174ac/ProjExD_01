@@ -22,10 +22,10 @@ def main():
 
         screen.blit(bg_img[0], [-tmr, 0])
         screen.blit(bg_img[1],[1600-tmr,0])
-        screen.blit(bard_imgs[tmr%2],[300,200])
+        screen.blit(bard_imgs[tmr%100//50],[300,200])
         pg.display.update()
         tmr += 1      
-        clock.tick(10)
+        clock.tick(100)
         if(tmr>1599):
             tmr=0
 
