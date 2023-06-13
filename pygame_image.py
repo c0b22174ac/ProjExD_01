@@ -13,7 +13,7 @@ def main():
     bg_img1 = pg.transform.flip(bg_img,False,False)
     bg_img = [bg_img0,bg_img1]
     bard_img = pg.transform.flip(bard_img,True,False)
-    bard_imgs = [bard_img,pg.transform.rotate(bard_img,10)]
+    bard_imgs = [bard_img,pg.transform.rotate(bard_img,6),pg.transform.rotate(bard_img,10),pg.transform.rotate(bard_img,4)]
 
     tmr = 0
     while True:
@@ -22,11 +22,12 @@ def main():
 
         screen.blit(bg_img[0], [-tmr, 0])
         screen.blit(bg_img[1],[1600-tmr,0])
-        screen.blit(bard_imgs[tmr%100//50],[300,200])
+        screen.blit(bg_img[0],[3200-tmr,0])
+        screen.blit(bard_imgs[tmr%200//50],[300,200])
         pg.display.update()
         tmr += 1      
-        clock.tick(100)
-        if(tmr>1599):
+        clock.tick(200)
+        if(tmr>3199):
             tmr=0
 
 
